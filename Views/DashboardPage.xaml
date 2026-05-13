@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Biblioteca.Views.DashboardPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid x:Name="RootGrid">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#0D0F1E" Offset="0"/>
+                <GradientStop Color="#10142B" Offset="0.5"/>
+                <GradientStop Color="#080B18" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Padding="32,28,32,32" Spacing="24">
+
+                <!-- TITULO -->
+                <StackPanel Spacing="4">
+                    <TextBlock Text="Dashboard"
+                               FontSize="28" FontWeight="Bold">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#FFFFFF" Offset="0"/>
+                                <GradientStop Color="#C5B8FF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <TextBlock Text="Resumen general del sistema biblioteca"
+                               FontSize="13" Foreground="#5A6380"/>
+                </StackPanel>
+
+                <!-- KPI CARDS -->
+                <Grid ColumnSpacing="14">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Libros -->
+                    <Border x:Name="Card1" Grid.Column="0"
+                            CornerRadius="16" Padding="20,18" BorderThickness="1">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#1A1F3A" Offset="0"/>
+                                <GradientStop Color="#141830" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#30FFFFFF" Offset="0"/>
+                                <GradientStop Color="#08FFFFFF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <StackPanel Spacing="10">
+                            <Border Width="36" Height="36" CornerRadius="10"
+                                    HorizontalAlignment="Left">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#287C5CFF" Offset="0"/>
+                                        <GradientStop Color="#2822D3EE" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <FontIcon Glyph="&#xE736;" FontSize="16" Foreground="#C5B8FF"/>
+                            </Border>
+                            <TextBlock Text="Libros" FontSize="12"
+                                       Foreground="#5A6380" CharacterSpacing="40"/>
+                            <TextBlock x:Name="TxtBooks" Text="0"
+                                       FontSize="32" FontWeight="Bold"
+                                       Foreground="#F0EEFF"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Disponibles -->
+                    <Border x:Name="Card2" Grid.Column="1"
+                            CornerRadius="16" Padding="20,18" BorderThickness="1">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#1A1F3A" Offset="0"/>
+                                <GradientStop Color="#141830" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#30FFFFFF" Offset="0"/>
+                                <GradientStop Color="#08FFFFFF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <StackPanel Spacing="10">
+                            <Border Width="36" Height="36" CornerRadius="10"
+                                    HorizontalAlignment="Left">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#2822D3EE" Offset="0"/>
+                                        <GradientStop Color="#2810C8A0" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <FontIcon Glyph="&#xE73E;" FontSize="16" Foreground="#22D3EE"/>
+                            </Border>
+                            <TextBlock Text="Disponibles" FontSize="12"
+                                       Foreground="#5A6380" CharacterSpacing="40"/>
+                            <TextBlock x:Name="TxtAvailable" Text="0"
+                                       FontSize="32" FontWeight="Bold"
+                                       Foreground="#22D3EE"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Usuarios activos -->
+                    <Border x:Name="Card3" Grid.Column="2"
+                            CornerRadius="16" Padding="20,18" BorderThickness="1">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#1A1F3A" Offset="0"/>
+                                <GradientStop Color="#141830" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#30FFFFFF" Offset="0"/>
+                                <GradientStop Color="#08FFFFFF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <StackPanel Spacing="10">
+                            <Border Width="36" Height="36" CornerRadius="10"
+                                    HorizontalAlignment="Left">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#28FF9F6B" Offset="0"/>
+                                        <GradientStop Color="#28FFD06B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <FontIcon Glyph="&#xE716;" FontSize="16" Foreground="#FFB86B"/>
+                            </Border>
+                            <TextBlock Text="Usuarios activos" FontSize="12"
+                                       Foreground="#5A6380" CharacterSpacing="40"/>
+                            <TextBlock x:Name="TxtUsers" Text="0"
+                                       FontSize="32" FontWeight="Bold"
+                                       Foreground="#FFB86B"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Préstamos activos -->
+                    <Border x:Name="Card4" Grid.Column="3"
+                            CornerRadius="16" Padding="20,18" BorderThickness="1">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#1A1F3A" Offset="0"/>
+                                <GradientStop Color="#141830" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#30FFFFFF" Offset="0"/>
+                                <GradientStop Color="#08FFFFFF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <StackPanel Spacing="10">
+                            <Border Width="36" Height="36" CornerRadius="10"
+                                    HorizontalAlignment="Left">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#287C5CFF" Offset="0"/>
+                                        <GradientStop Color="#28FF6B9D" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <FontIcon Glyph="&#xE8EE;" FontSize="16" Foreground="#C5B8FF"/>
+                            </Border>
+                            <TextBlock Text="Préstamos activos" FontSize="12"
+                                       Foreground="#5A6380" CharacterSpacing="40"/>
+                            <TextBlock x:Name="TxtLoans" Text="0"
+                                       FontSize="32" FontWeight="Bold"
+                                       Foreground="#F0EEFF"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Atrasados -->
+                    <Border x:Name="Card5" Grid.Column="4"
+                            CornerRadius="16" Padding="20,18" BorderThickness="1">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#1A1220" Offset="0"/>
+                                <GradientStop Color="#140F1E" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#40FF5F7A" Offset="0"/>
+                                <GradientStop Color="#10FF5F7A" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <StackPanel Spacing="10">
+                            <Border Width="36" Height="36" CornerRadius="10"
+                                    HorizontalAlignment="Left">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#40FF5F7A" Offset="0"/>
+                                        <GradientStop Color="#20FF3060" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <FontIcon Glyph="&#xE814;" FontSize="16" Foreground="#FF5F7A"/>
+                            </Border>
+                            <TextBlock Text="Atrasados" FontSize="12"
+                                       Foreground="#5A6380" CharacterSpacing="40"/>
+                            <TextBlock x:Name="TxtLate" Text="0"
+                                       FontSize="32" FontWeight="Bold"
+                                       Foreground="#FF5F7A"/>
+                        </StackPanel>
+                    </Border>
+
+                </Grid>
+
+                <!-- PANEL INFERIOR -->
+                <Grid ColumnSpacing="16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- ÚLTIMOS PRÉSTAMOS -->
+                    <Border Grid.Column="0" CornerRadius="16"
+                            Padding="24,20" BorderThickness="1">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#1A1F3A" Offset="0"/>
+                                <GradientStop Color="#141830" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#30FFFFFF" Offset="0"/>
+                                <GradientStop Color="#08FFFFFF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+
+                        <StackPanel Spacing="16">
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <Border Width="28" Height="28" CornerRadius="8">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Color="#287C5CFF" Offset="0"/>
+                                            <GradientStop Color="#2822D3EE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <FontIcon Glyph="&#xE823;" FontSize="12" Foreground="#C5B8FF"/>
+                                </Border>
+                                <TextBlock Text="Últimos préstamos"
+                                           FontSize="16" FontWeight="SemiBold"
+                                           Foreground="#F0EEFF"
+                                           VerticalAlignment="Center"/>
+                            </StackPanel>
+
+                            <!-- Separador -->
+                            <Border Height="1" Opacity="0.08">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#00FFFFFF" Offset="0"/>
+                                        <GradientStop Color="#FFFFFF"   Offset="0.5"/>
+                                        <GradientStop Color="#00FFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                            </Border>
+
+                            <ItemsControl x:Name="RecentList">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border CornerRadius="10" Padding="14,10"
+                                                Margin="0,0,0,8" BorderThickness="1">
+                                            <Border.Background>
+                                                <SolidColorBrush Color="#0F1428"/>
+                                            </Border.Background>
+                                            <Border.BorderBrush>
+                                                <SolidColorBrush Color="#1E2440"/>
+                                            </Border.BorderBrush>
+                                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                                <Border Width="8" Height="8" CornerRadius="4"
+                                                        VerticalAlignment="Center">
+                                                    <Border.Background>
+                                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                            <GradientStop Color="#7C5CFF" Offset="0"/>
+                                                            <GradientStop Color="#22D3EE" Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </Border.Background>
+                                                </Border>
+                                                <TextBlock Text="{Binding}"
+                                                           FontSize="12"
+                                                           Foreground="#8090C0"
+                                                           VerticalAlignment="Center"
+                                                           TextWrapping="Wrap"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+
+                        </StackPanel>
+                    </Border>
+
+                    <!-- RESUMEN -->
+                    <Border Grid.Column="1" CornerRadius="16"
+                            Padding="24,20" BorderThickness="1">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#1A1F3A" Offset="0"/>
+                                <GradientStop Color="#141830" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#30FFFFFF" Offset="0"/>
+                                <GradientStop Color="#08FFFFFF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+
+                        <StackPanel Spacing="16">
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <Border Width="28" Height="28" CornerRadius="8">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Color="#28FFB86B" Offset="0"/>
+                                            <GradientStop Color="#2822D3EE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <FontIcon Glyph="&#xE9D2;" FontSize="12" Foreground="#FFB86B"/>
+                                </Border>
+                                <TextBlock Text="Resumen"
+                                           FontSize="16" FontWeight="SemiBold"
+                                           Foreground="#F0EEFF"
+                                           VerticalAlignment="Center"/>
+                            </StackPanel>
+
+                            <Border Height="1" Opacity="0.08">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#00FFFFFF" Offset="0"/>
+                                        <GradientStop Color="#FFFFFF"   Offset="0.5"/>
+                                        <GradientStop Color="#00FFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                            </Border>
+
+                            <!-- Stat row 1 -->
+                            <Border CornerRadius="10" Padding="14,12" BorderThickness="1">
+                                <Border.Background>
+                                    <SolidColorBrush Color="#0F1428"/>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <SolidColorBrush Color="#1E2440"/>
+                                </Border.BorderBrush>
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="Ejemplares prestados"
+                                               FontSize="11" Foreground="#404870"
+                                               CharacterSpacing="40"/>
+                                    <TextBlock x:Name="TxtSummary1"
+                                               FontSize="20" FontWeight="Bold"
+                                               Foreground="#C5B8FF"/>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Stat row 2 -->
+                            <Border CornerRadius="10" Padding="14,12" BorderThickness="1">
+                                <Border.Background>
+                                    <SolidColorBrush Color="#0F1428"/>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <SolidColorBrush Color="#1E2440"/>
+                                </Border.BorderBrush>
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="Usuarios registrados"
+                                               FontSize="11" Foreground="#404870"
+                                               CharacterSpacing="40"/>
+                                    <TextBlock x:Name="TxtSummary2"
+                                               FontSize="20" FontWeight="Bold"
+                                               Foreground="#22D3EE"/>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Stat row 3 -->
+                            <Border CornerRadius="10" Padding="14,12" BorderThickness="1">
+                                <Border.Background>
+                                    <SolidColorBrush Color="#0F1428"/>
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <SolidColorBrush Color="#1E2440"/>
+                                </Border.BorderBrush>
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="Préstamos históricos"
+                                               FontSize="11" Foreground="#404870"
+                                               CharacterSpacing="40"/>
+                                    <TextBlock x:Name="TxtSummary3"
+                                               FontSize="20" FontWeight="Bold"
+                                               Foreground="#FFB86B"/>
+                                </StackPanel>
+                            </Border>
+
+                        </StackPanel>
+                    </Border>
+
+                </Grid>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
