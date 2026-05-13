@@ -1,99 +1,94 @@
-BibliotecaWinUI
+# Biblioteca - Sistema de Gestión Bibliotecaria
 
-Modern library management system developed with WinUI 3, XAML, and C#.
+Sistema de gestión bibliotecaria desarrollado en C# y WinUI 3. Permite administrar libros, usuarios y préstamos mediante una interfaz moderna y dinámica.
 
-Features
+## Características
 
-* Book management
-* User administration
-* Loan and return system
-* Real-time search and filters
-* Loan due date tracking
-* Role-based permissions
-* Modern UI with animations and gradients
-* Activity logging system
-* Local data persistence
+* Gestión de libros
 
----
+  * Registro, edición y eliminación de libros
+  * Control de disponibilidad
+  * Búsqueda y filtrado
 
-Technologies Used
+* Gestión de usuarios
+
+  * Roles de administrador y lector
+  * Control de permisos
+  * Usuarios activos e inactivos
+
+* Gestión de préstamos
+
+  * Registro de préstamos
+  * Devolución de libros
+  * Control de préstamos vencidos
+  * Historial de préstamos
+  * Validación de límites de préstamos
+
+* Interfaz moderna
+
+  * Diseño personalizado con WinUI 3
+  * Animaciones y efectos visuales
+  * Notificaciones tipo toast
+  * Filtros dinámicos y búsqueda en tiempo real
+
+## Tecnologías utilizadas
 
 * C#
 * WinUI 3
 * XAML
 * .NET
-* JSON Storage
+* JSON para almacenamiento de datos
 
+## Estructura del proyecto
 
-Project Structure
-
-```plaintext
+```text
 Biblioteca/
 │
-├── Models/        # Data models
-├── Services/      # Data and session services
-├── Views/         # XAML pages and UI logic
-├── Assets/        # Images and resources
-└── Data/          # Local JSON storage
+├── Models/        # Modelos de datos
+├── Services/      # Lógica y manejo de datos
+├── Views/         # Interfaces XAML
+├── Assets/        # Recursos gráficos
+└── Data/          # Archivos JSON
 ```
 
----
+## Funcionalidades principales
 
-Requirements
+### Administrador
+
+* Gestionar libros
+* Gestionar usuarios
+* Registrar préstamos
+* Confirmar devoluciones
+* Eliminar préstamos
+* Consultar historial
+
+### Lector
+
+* Consultar libros
+* Ver préstamos propios
+* Buscar libros disponibles
+
+## Instalación
+
+1. Clonar el repositorio
+
+```bash
+git clone https://github.com/usuario/repositorio.git
+```
+
+2. Abrir la solución en Visual Studio
+
+3. Restaurar paquetes NuGet
+
+4. Ejecutar el proyecto
+
+## Requisitos
 
 * Visual Studio 2022
 * .NET SDK
 * Windows App SDK
-* Windows 10/11
+* Windows 10 u 11
 
-Run the project
+## Autor
 
-1. Clone the repository
-
-```bash
-git clone https://github.com/your-user/BibliotecaWinUI.git
-```
-
-2. Open the solution in Visual Studio
-
-3. Build and run the project
-
----
-
-Preview
-
-Add screenshots of the application here.
-
----
-
-Roles
-
-Administrator
-
-* Manage books
-* Manage users
-* Register loans
-* Delete loans
-* Access full system features
-
-Reader
-
-* View personal loans
-* Search books
-* Access limited features
-
-Notes
-
-This project was developed as an academic desktop application focused on practicing:
-
-* WinUI 3 development
-* UI/UX design
-* CRUD operations
-* Role management
-* Local data persistence
-* Modern desktop interfaces
-
----
-License
-
-This project is for educational purposes.
+Proyecto desarrollado con C# y WinUI 3 como práctica de desarrollo de aplicaciones de escritorio.
